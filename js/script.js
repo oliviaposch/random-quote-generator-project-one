@@ -40,7 +40,8 @@ const quotes = [
 event listener to respond to "Show another quote" button clicks
 when user clicks anywhere on the button, the "printQuote" function is called
 */
-const outputDiv = document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+const btn = document.getElementById('loadQuote');
+const outputDiv = btn.addEventListener("click", printQuote, false);
 const intervalID = window.setInterval(printQuote, 5000);
 
 // RANDOM OF COLORS
@@ -79,6 +80,7 @@ function printQuote(){
 
 		let bgColor = getRandomColor();
 		document.body.style.backgroundColor = bgColor;
+		btn.style.backgroundColor = bgColor;
 
 		let printQuoteElements = getRandomQuote();
 		document.getElementById('quote-box').innerHTML = printQuoteElements;
